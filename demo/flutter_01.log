@@ -1,0 +1,89 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color packages get
+
+## exception
+
+SocketException: SocketException: OS Error: 信号灯超时时间已到
+, errno = 121, address = storage.googleapis.com, port = 54807
+
+```
+#0      _attempt (package:flutter_tools/src/base/net.dart:40)
+<asynchronous suspension>
+#1      fetchUrl (package:flutter_tools/src/base/net.dart:22)
+<asynchronous suspension>
+#2      _downloadFile (package:flutter_tools/src/cache.dart:424)
+<asynchronous suspension>
+#3      _downloadZipArchive.<anonymous closure> (package:flutter_tools/src/cache.dart:435)
+<asynchronous suspension>
+#4      _withTemporaryFile (package:flutter_tools/src/cache.dart:460)
+<asynchronous suspension>
+#5      _downloadZipArchive (package:flutter_tools/src/cache.dart:434)
+#6      FlutterEngine._downloadItem (package:flutter_tools/src/cache.dart:394)
+#7      FlutterEngine.updateInner (package:flutter_tools/src/cache.dart:362)
+<asynchronous suspension>
+#8      CachedArtifact.update (package:flutter_tools/src/cache.dart:239)
+<asynchronous suspension>
+#9      Cache.updateAll (package:flutter_tools/src/cache.dart:196)
+<asynchronous suspension>
+#10     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:239)
+<asynchronous suspension>
+#11     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:193)
+<asynchronous suspension>
+#12     CommandRunner.runCommand (package:args/command_runner.dart:194)
+<asynchronous suspension>
+#13     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:279)
+<asynchronous suspension>
+#14     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:109)
+#15     new Future.sync (dart:async/future.dart:222)
+#16     CommandRunner.run (package:args/command_runner.dart:109)
+#17     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:162)
+#18     run.<anonymous closure> (package:flutter_tools/executable.dart:143)
+<asynchronous suspension>
+#19     AppContext._run (package:flutter_tools/src/base/context.dart:76)
+<asynchronous suspension>
+#20     AppContext.runInZone.<anonymous closure> (package:flutter_tools/src/base/context.dart:66)
+#21     _rootRun (dart:async/zone.dart:1120)
+#22     _CustomZone.run (dart:async/zone.dart:1001)
+#23     runZoned (dart:async/zone.dart:1467)
+#24     AppContext.runInZone (package:flutter_tools/src/base/context.dart:65)
+#25     run (package:flutter_tools/executable.dart:114)
+<asynchronous suspension>
+#26     main (package:flutter_tools/executable.dart:67)
+<asynchronous suspension>
+#27     main (file:///F:/flutter/packages/flutter_tools/bin/flutter_tools.dart:16)
+#28     _startIsolate.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:263)
+#29     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:151)
+```
+
+## flutter doctor
+
+```
+[-] Flutter (on Microsoft Windows [Version 10.0.15063], locale zh-CN, channel alpha)
+    • Flutter at F:\flutter
+    • Framework revision 4424892c79 (2 days ago), 2017-10-10 16:45:11 -0700
+    • Engine revision 2a84f18c79
+    • Tools Dart version 1.25.0-dev.11.0
+    ✗ Downloaded executables cannot execute on host (see https://github.com/flutter/flutter/issues/6207 for more information)
+
+[✓] Android toolchain - develop for Android devices (Android SDK 25.0.3)
+    • Android SDK at F:/eclipse_android_sdk
+    • Platform android-25, build-tools 25.0.3
+    • ANDROID_HOME = F:/eclipse_android_sdk
+    • Java binary at: E:\Android studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_112-release-b06)
+
+[✓] Android Studio (version 2.3)
+    • Android Studio at E:\Android studio
+    • Java version OpenJDK Runtime Environment (build 1.8.0_112-release-b06)
+
+[✓] IntelliJ IDEA Community Edition (version 2017.2)
+    • Flutter plugin version 17.0
+    • Dart plugin version 172.4155.35
+
+[✓] Connected devices
+    • HUAWEI NXT AL10 • 5LM0216111013941 • android-arm • Android 7.0 (API 24)
+
+```
